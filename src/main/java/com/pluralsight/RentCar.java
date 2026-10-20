@@ -10,8 +10,7 @@ public class RentCar {
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
         String userInput;
-        int numRentalDays = 0;
-        boolean isToll = false;
+        int numRentalDays;
         String pickUpDate = "";
         float addOnPrice = 0;
         int userAge;
@@ -36,10 +35,11 @@ public class RentCar {
 
         switch (userInput.toLowerCase()) {
             case "yes" -> {
-                isToll = true;
-                addOnPrice += 3.95;
+                addOnPrice += 3.95f;
             }
-            case "no" -> isToll = false;
+            case "no" -> {
+                break;
+            }
             default ->  {
                 System.out.println("Invalid input!");
                 System.exit(1);
@@ -78,8 +78,8 @@ public class RentCar {
         }
 
 
-        /**
-         * ######### Reciept #######
+        /*
+         * ######### Receipt #######
          * Basic car rental price
          * Options cost
          * underage surcharge
